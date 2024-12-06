@@ -1,5 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
+
+from users.models import CustomUser
+
+# from django.contrib.auth.models import CustomUser
 
 class Role(models.TextChoices):
     ADMIN = 'ADMIN', 'Admin'
@@ -7,7 +10,7 @@ class Role(models.TextChoices):
     GUEST = 'GUEST', 'Guest'
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     role = models.CharField(max_length=50, choices=Role.choices, default=Role.GUEST)
 
     def __str__(self):
@@ -22,7 +25,7 @@ class Hotel(models.Model):
         return self.name
 
 class Customer(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=15)
     address = models.CharField(max_length=255)
 
