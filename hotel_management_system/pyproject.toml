@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "hotel-management-system"
+version = "0.1.0"
+description = ""
+authors = ["Yernur Shapkat <113994667+Fruzzy07@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.4"
+djangorestframework = "^3.15.2"
+djangorestframework-simplejwt = "^5.3.1"
+djoser = "^2.3.1"
+drf-spectacular = "^0.28.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
