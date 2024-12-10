@@ -1,0 +1,55 @@
+/* General form styling */
+.booking-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.submit-button {
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #4cae4c;
+}
+
+/* Styling for errors */
+.form-errors {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+  color: #d9534f;
+}
+
+.form-errors li {
+  margin-bottom: 5px;
+}
+
+/* Back link styling */
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: #23527c;
+}

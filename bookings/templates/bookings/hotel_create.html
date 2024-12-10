@@ -1,0 +1,22 @@
+<!-- templates/hotel_management/hotel_create.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Hotel</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/hotel_create.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Create a New Hotel</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-submit">Save Hotel</button>
+        </form>
+        <a href="{% url 'hotel_list' %}" class="back-link">Back to Hotel List</a>
+    </div>
+</body>
+</html>

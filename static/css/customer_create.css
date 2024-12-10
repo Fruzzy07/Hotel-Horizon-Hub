@@ -1,0 +1,78 @@
+/* Централизованная контейнерная структура */
+.customer-create-container {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.customer-create-container h1 {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.customer-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.customer-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.customer-form input[type="text"],
+.customer-form input[type="email"],
+.customer-form input[type="tel"],
+.customer-form select,
+.customer-form textarea {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.customer-form input[type="text"]:focus,
+.customer-form input[type="email"]:focus,
+.customer-form input[type="tel"]:focus,
+.customer-form select:focus,
+.customer-form textarea:focus {
+  border-color: #007BFF;
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Кнопка отправки формы */
+.submit-btn {
+  display: block;
+  width: 100%;
+  background-color: #28a745;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
+
+.submit-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+

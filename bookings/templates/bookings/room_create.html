@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/room_create.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="room-create-container">
+    <h1 class="room-create-title">Create a New Room for {{ hotel.name }}</h1>
+
+    <form method="post" class="room-create-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Create Room</button>
+    </form>
+
+    <a href="{% url 'room_list' hotel_id=hotel.id %}" class="back-to-room-list-btn">Back to Room List</a>
+  </div>
+{% endblock %}
+
+

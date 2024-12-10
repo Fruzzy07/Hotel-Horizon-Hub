@@ -1,0 +1,54 @@
+/* Стили только для customer_list.html */
+
+.customer-list-container {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.customer-list-container h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.customer-list-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.customer-list-container li {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.customer-list-container li:hover {
+  background-color: #f9f9f9;
+}
+
+.customer-list-container li span {
+  font-weight: bold;
+  color: #333;
+}
+
+.customer-list-container a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.customer-list-container a:hover {
+  background-color: #218838;
+}

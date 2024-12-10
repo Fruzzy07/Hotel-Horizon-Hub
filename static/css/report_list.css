@@ -1,0 +1,68 @@
+/* report_list.css */
+
+/* General container for the report list page */
+.report-list-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+/* Title styling */
+.report-list-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Styling for the report list */
+.report-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.report-item {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.report-item:hover {
+  background-color: #f9f9f9;
+}
+
+.report-type,
+.report-date {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style for the action links (Create Room and Back to Hotels) */
+.create-report-link,
+.back-to-hotels-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.create-report-link:hover,
+.back-to-hotels-link:hover {
+  background-color: #0056b3;
+}
+
+/* Style for the "Back to Hotels" link (different color) */
+.back-to-hotels-link {
+  background-color: #28a745;
+}
+
+.back-to-hotels-link:hover {
+  background-color: #218838;
+}

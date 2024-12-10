@@ -1,0 +1,85 @@
+/* room_list.css */
+
+/* Container for the Room List page */
+.room-list-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.room-list-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Styling for the room list */
+.room-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.room-list ul li {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.room-list ul li:hover {
+  background-color: #f9f9f9;
+}
+
+.room-list ul li strong {
+  color: #333;
+}
+
+/* Room status styling */
+.room-status {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.room-status.unavailable {
+  color: #dc3545;
+}
+
+/* Create Room button */
+.create-room-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.create-room-btn:hover {
+  background-color: #0056b3;
+}
+
+.create-room-btn:focus {
+  outline: none;
+}
+
+/* Back to Hotels button */
+.back-to-hotels-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6c757d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.back-to-hotels-btn:hover {
+  background-color: #5a6268;
+}

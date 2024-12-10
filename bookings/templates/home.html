@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="home-container">
+    <h1>Welcome to the Hotel Management System</h1>
+    <p>This is the homepage of the application. From here, you can manage your hotels, rooms, pricing, and more.</p>
+    <a href="{% url 'hotel_list' %}">Go to Hotel List</a>
+  </div>
+{% endblock %}
+

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/customer_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="customer-list-container">
+  <h1>Customers</h1>
+  <ul>
+    {% for customer in customers %}
+      <li>{{ customer.name }} - {{ customer.email }} - {{ customer.phone }}</li>
+    {% endfor %}
+  </ul>
+
+  {% if user.role == 'manager' or user.role == 'admin' %}
+    <a href="{% url 'customer_create' %}">Create a Customer</a>
+  {% endif %}
+</div>
+{% endblock %}
+
+

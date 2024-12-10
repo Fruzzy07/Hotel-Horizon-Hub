@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/pricing_list.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="pricing-container">
+    <h1>Pricing Information</h1>
+
+    <ul class="pricing-list">
+      {% for pricing in pricing %}
+        <li class="pricing-item">
+          <span class="room-type">{{ pricing.room_type }}</span>
+          - <span class="season">{{ pricing.season }}</span>
+          - <span class="price">${{ pricing.price }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+
+    {% if user.role == 'manager' or user.role == 'admin' %}
+      <a href="{% url 'pricing_create' %}" class="btn-create">Create New Pricing</a>
+    {% endif %}
+  </div>
+{% endblock %}
+

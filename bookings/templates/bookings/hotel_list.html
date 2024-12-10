@@ -1,0 +1,31 @@
+<!-- templates/bookings/hotel_list.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/hotel_list.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="hotel-list-container">
+    <h1>Hotels</h1>
+
+    {% if user.role == 'manager' or user.role == 'admin' %}
+      <a href="{% url 'hotel_create' %}" class="create-hotel-btn">Create a Hotel</a>
+    {% endif %}
+
+    <ul class="hotel-list">
+      {% for hotel in hotels %}
+        <li class="hotel-item">
+          <h2>{{ hotel.name }} (Hotel ID: {{ hotel.id }})</h2>
+          <div class="hotel-actions">
+            <a href="{% url 'room_list' hotel_id=hotel.id %}" class="action-link">View Rooms</a>
+            <a href="{% url 'report_list' hotel_id=hotel.id %}" class="action-link">View Reports</a>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
+

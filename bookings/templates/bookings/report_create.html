@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/report_create.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="report-create-container">
+    <h1 class="report-create-title">Create New Report</h1>
+    <form method="POST" class="report-create-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="submit-button">Create Report</button>
+    </form>
+  </div>
+{% endblock %}
+

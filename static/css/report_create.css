@@ -1,0 +1,64 @@
+/* report_create.css */
+
+/* Container for the Create Report page */
+.report-create-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.report-create-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Styling for the form */
+.report-create-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.report-create-form p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Button styling */
+.submit-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.submit-button:focus {
+  outline: none;
+}
+
+/* Style for error or success messages (optional) */
+.form-error,
+.form-success {
+  color: #d9534f; /* Error color */
+  color: #5bc0de; /* Success color */
+  text-align: center;
+  margin-top: 20px;
+}

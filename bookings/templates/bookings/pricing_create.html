@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/pricing_create.css' %}">
+{% endblock %}
+
+{% block content %}
+  <h1>Create New Pricing</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Pricing</button>
+  </form>
+  <br>
+  <a href="{% url 'pricing_list' %}">Back to Pricing List</a>
+{% endblock %}
+

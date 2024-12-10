@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/room_list.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="room-list-container">
+    <h1 class="room-list-title">Rooms for {{ hotel.name }}</h1>
+
+    {% if rooms %}
+      <ul>
+        {% for room in rooms %}
+          <li>
+            <strong>Room Name:</strong> {{ room.name }}<br>
+            <strong>Type:</strong> {{ room.get_room_type_display }}<br>
+            <strong>Capacity:</strong> {{ room.capacity }}<br>
+            <strong>Price:</strong> ${{ room.price }}<br>
+
+            <strong>Status:</strong>
+            <span class="room-status {% if not room.is_available %}unavailable{% endif %}">
+              {% if room.is_available %}
+                Available
+              {% else %}
+                Not Available
+              {% endif %}
+            </span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No rooms available.</p>
+    {% endif %}
+
+    {% if user.role == 'manager' or user.role == 'admin' %}
+      <a href="{% url 'room_create' hotel_id=hotel.id %}" class="create-room-btn">Create a Room</a>
+    {% endif %}
+
+    <a href="{% url 'hotel_list' %}" class="back-to-hotels-btn">Hotels</a>
+  </div>
+{% endblock %}
+
+
+

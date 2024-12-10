@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="register-container">
+    <h1>Register</h1>
+
+    {% if form.errors %}
+      <p class="error-message">Please fix the following errors:</p>
+    {% endif %}
+
+    <form method="post" class="register-form">
+      {% csrf_token %}
+      <div>
+        <label for="id_username">Username</label>
+        {{ form.username }}
+      </div>
+
+      <div>
+        <label for="id_email">Email</label>
+        {{ form.email }}
+      </div>
+
+      <div>
+        <label for="id_password1">Password</label>
+        {{ form.password1 }}
+      </div>
+
+      <div>
+        <label for="id_password2">Confirm Password</label>
+        {{ form.password2 }}
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+  </div>
+{% endblock %}
+

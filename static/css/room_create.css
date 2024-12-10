@@ -1,0 +1,72 @@
+/* room_create.css */
+
+/* Container for the Create Room page */
+.room-create-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.room-create-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+.room-create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.room-create-form label {
+  font-weight: bold;
+  color: #333;
+}
+
+.room-create-form input,
+.room-create-form select,
+.room-create-form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.room-create-form button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.room-create-form button:hover {
+  background-color: #0056b3;
+}
+
+.room-create-form button:focus {
+  outline: none;
+}
+
+/* Back to Room List button */
+.back-to-room-list-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6c757d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.back-to-room-list-btn:hover {
+  background-color: #5a6268;
+}

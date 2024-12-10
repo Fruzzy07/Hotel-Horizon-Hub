@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management System</title>
+    {% load static %} <!-- Load static files -->
+    <!-- Link to main styles -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% block extra_css %}
+    <!-- Block for additional CSS if needed per page -->
+    {% endblock %}
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'hotel_list' %}">Hotels</a></li>
+                <li><a href="{% url 'customer_list' %}">Customers</a></li>
+                <li><a href="{% url 'booking_list' %}">Bookings</a></li>
+                <li><a href="{% url 'pricing_list' %}">Pricing</a></li>
+
+                <!-- If we're on a specific hotel page, show links to rooms and reports -->
+                {% if hotel.id %}
+                <li><a href="{% url 'room_list' hotel_id=hotel.id %}">Rooms</a></li>
+                <li><a href="{% url 'report_list' hotel_id=hotel.id %}">Reports for {{ hotel.name }}</a></li>
+                {% endif %}
+
+                <li class="auth-links">
+                    {% if user.is_authenticated %}
+                    <li>Welcome, {{ user.username }}!</li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Content for each specific page will go here -->
+        {% endblock %}
+    </main>
+
+</body>
+
+</html>

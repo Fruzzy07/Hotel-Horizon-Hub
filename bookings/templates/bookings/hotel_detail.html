@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+  <p>Hotel ID: {{ hotel.id }}</p>
+  <h1>{{ hotel.name }}</h1>
+  <p>Address: {{ hotel.address }}</p>
+  <h2>Rooms</h2>
+  <ul>
+    {% for room in rooms %}
+      <li>{{ room.room_type }} - {{ room.capacity }} persons - ${{ room.price }} - 
+        {% if room.is_available %} Available {% else %} Not Available {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'room_create' hotel.id %}">Create a Room</a>
+{% endblock %}

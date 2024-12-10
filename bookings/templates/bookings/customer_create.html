@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/customer_create.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="customer-create-container">
+  <h1>Create a New Customer</h1>
+  <form method="POST" class="customer-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="submit-btn">Create Customer</button>
+  </form>
+</div>
+{% endblock %}
+

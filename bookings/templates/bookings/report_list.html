@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/report_list.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="report-list-container">
+    <h1 class="report-list-title">Reports for {{ hotel.name }}</h1>
+    <ul class="report-list">
+      {% for report in reports %}
+        <li class="report-item">
+          <span class="report-type">{{ report.report_type }}</span> -
+          <span class="report-date">{{ report.created_at }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+    {% if user.role == 'manager' or user.role == 'admin' %}
+      <a href="{% url 'report_create' hotel_id=hotel.id %}" class="create-report-link">Create a Report</a>
+    {% endif %}
+    <a href="{% url 'hotel_list' %}" class="back-to-hotels-link">Back to Hotels</a>
+  </div>
+{% endblock %}
+

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}  <!-- Add this line to load static files -->
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/booking_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="booking-list-container">
+  <h1>Bookings</h1>
+  <ul>
+    {% for booking in bookings %}
+      <li>
+        {{ booking.customer.name }} - {{ booking.room.name }} -
+        {{ booking.room.room_type }} - {{ booking.check_in_date }} to {{ booking.check_out_date }} -
+        {% if booking.get_season_price %}
+          ${{ booking.get_season_price }}
+        {% else %}
+          Price not available for the selected season.
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+  {% if user.role == 'manager' or user.role == 'admin' %}
+    <a href="{% url 'booking_create' hotel_id=hotel.id %}">Create a Booking</a>
+  {% endif %}
+</div>
+{% endblock %}
