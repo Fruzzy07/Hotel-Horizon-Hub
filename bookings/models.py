@@ -22,6 +22,7 @@ class CustomUser(AbstractUser):
         blank=True
     )
 
+
 class Hotel(models.Model):
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=255, default="Unknown Address")
